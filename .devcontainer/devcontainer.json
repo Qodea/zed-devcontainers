@@ -1,0 +1,28 @@
+{
+  "name": "Qodea Zed",
+  "image": "mcr.microsoft.com/devcontainers/base:jammy",
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {
+      "installDirectlyFromGitHubRelease": true,
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/python:1": {
+      "installTools": true,
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/terraform:1": {
+      "installSentinel": true,
+      "installTerraformDocs": true,
+      "version": "latest",
+      "tflint": "latest",
+      "terragrunt": "latest"
+    },
+    "ghcr.io/dhoeric/features/google-cloud-cli:1": {
+      "installGkeGcloudAuthPlugin": true
+    },
+    "ghcr.io/prulloac/devcontainer-features/pre-commit:1": {},
+    "ghcr.io/dhoeric/features/trivy:1": {}
+  },
+
+  "postCreateCommand": "pre-commit install"
+}

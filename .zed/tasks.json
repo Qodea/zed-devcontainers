@@ -1,0 +1,24 @@
+[
+  {
+    "label": "Build Dev Container",
+    "command": "devcontainer up",
+    "args": [
+      "--mount type=bind,source=${HOME}/.config,target=/home/vscode/.config",
+      "--mount type=bind,source=${HOME}/.gitconfig,target=/home/vscode/.gitconfig",
+      "--workspace-folder ."
+    ],
+    "options": {
+      "cwd": "${workspaceRoot}"
+    },
+    "runAtStartup": true
+  },
+  {
+    "label": "Run Dev Container",
+    "command": "devcontainer exec",
+    "args": ["--workspace-folder . /bin/zsh"],
+    "options": {
+      "cwd": "${workspaceRoot}"
+    },
+    "runAtStartup": true
+  }
+]
